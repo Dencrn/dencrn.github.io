@@ -83,7 +83,14 @@ html, body {
   padding: 20px;
   margin-top: 20px;
   border-radius: 10px;
+  
+  max-width: 600px;    /* limit max width */
+  margin-left: auto;   /* center horizontally */
+  margin-right: auto;
+  word-wrap: break-word; /* wrap long words */
+  overflow-wrap: break-word;
 }
+
 
 .custom-content a {
   color: #ffffff;
