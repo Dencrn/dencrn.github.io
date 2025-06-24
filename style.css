@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  html, body {
+  font-family: 'Product Sans', sans-serif;
+}
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('font/ProductSansRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Background Image with Blur */
+.background-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.background-blur img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(10px);
+  transform: scale(1.1); /* avoid edge clipping due to blur */
+}
+
+/* Foreground content */
+.content {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+/* Rotating 3D image */
+.rotating-image {
+  width: 200px;
+  height: 200px;
+  perspective: 1000px; /* gives a 3D context */
+}
+
+.rotating-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: rotateFlat3D 6s linear infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes rotateFlat3D {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+/* Hyperlink stuff */
+
+.custom-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.custom-content a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.custom-content a:hover {
+  color: #d3d3d3;
+}
+
+a {
+  font-size: 1.2em; /* or try 18px, 20px, etc. */
+}
+
+.link-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* spacing between links */
+  flex-wrap: wrap; /* optional: wrap links on small screens */
+  margin-top: 10px;
+}
