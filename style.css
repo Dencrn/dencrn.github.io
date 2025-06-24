@@ -94,9 +94,23 @@ html, body {
   color: #d3d3d3;
 }
 
-a {
-  font-size: 1.2em; /* or try 18px, 20px, etc. */
+.custom-content p {
+  font-size: 18px; /* Bigger paragraph text */
+  color: white;
 }
+
+.custom-content a {
+  font-size: 20px; /* Smaller hyperlinks */
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.custom-content p a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 
 .link-row {
   display: flex;
