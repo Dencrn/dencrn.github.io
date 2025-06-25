@@ -20,6 +20,21 @@ html, body {
   font-style: normal;
 }
 
+.custom-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  width: fit-content;
+  max-width: 90vw;
+    transition: all 0.3s ease;
+  max-width: 600px;    /* limit max width */
+  margin-left: auto;   /* center horizontally */
+  margin-right: auto;
+  word-wrap: break-word; /* wrap long words */
+  overflow-wrap: break-word;
+}
+
 /* Background Image with Blur */
 .background-blur {
   position: fixed;
@@ -77,20 +92,46 @@ html, body {
 }
 
 /* Hyperlink stuff */
-
-.custom-content {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-  
-  max-width: 600px;    /* limit max width */
-  margin-left: auto;   /* center horizontally */
-  margin-right: auto;
-  word-wrap: break-word; /* wrap long words */
-  overflow-wrap: break-word;
+.dropdown {
+  position: relative;
+  display: block;
+  margin-top: 10px;
 }
 
+.dropbtn {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px 16px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.dropdown-content.show {
+  display: flex;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  background: none !important; /* ← forcefully remove background */
+  border: none;
+  margin: 4px 0;
+}
+
+.dropdown-content a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
 
 .custom-content a {
   color: #ffffff;
