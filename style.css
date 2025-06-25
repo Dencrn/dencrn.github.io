@@ -44,7 +44,12 @@ html, body {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(10px) brightness(1); /* DARK blur */
+  transform: scale(1.1); /* prevents edges showing */
+  opacity: 1;
 }
 
 .background-blur img {
