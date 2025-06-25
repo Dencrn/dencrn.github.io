@@ -4,15 +4,31 @@
   box-sizing: border-box;
 }
 
+/* Ensure full height and vertical scroll if needed */
 html, body {
   height: 100%;
-  width: 100%;
-  overflow: hidden;
-  html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;  /* Keep horizontal overflow hidden */
+  overflow-y: auto;    /* Allow vertical scrolling */
   font-family: 'Product Sans', sans-serif;
 }
+
+/* Center the entire page content */
+.content {
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
 }
 
+/* Font face for Product Sans */
 @font-face {
   font-family: 'Product Sans';
   src: url('font/ProductSansRegular.ttf') format('truetype');
@@ -20,22 +36,7 @@ html, body {
   font-style: normal;
 }
 
-.custom-content {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-  width: fit-content;
-  max-width: 90vw;
-    transition: all 0.3s ease;
-  max-width: 600px;    /* limit max width */
-  margin-left: auto;   /* center horizontally */
-  margin-right: auto;
-  word-wrap: break-word; /* wrap long words */
-  overflow-wrap: break-word;
-}
-
-/* Background Image with Blur */
+/* Blurred background */
 .background-blur {
   position: fixed;
   top: 0;
@@ -51,27 +52,28 @@ html, body {
   height: 100%;
   object-fit: cover;
   filter: blur(10px);
-  transform: scale(1.1); /* avoid edge clipping due to blur */
+  transform: scale(1.1);
 }
 
 /* Foreground content */
 .content {
   position: relative;
   z-index: 1;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 5px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
   color: white;
+  text-align: center;
 }
 
-/* Rotating 3D image */
+/* Rotating image container */
 .rotating-image {
   width: 200px;
   height: 200px;
-  perspective: 1000px; /* gives a 3D context */
+  perspective: 1000px;
+  margin-bottom: 20px;
 }
 
 .rotating-image img {
@@ -91,7 +93,7 @@ html, body {
   }
 }
 
-/* Hyperlink stuff */
+/* Dropdown styling */
 .dropdown {
   position: relative;
   display: block;
@@ -123,7 +125,7 @@ html, body {
   padding: 10px;
   font-size: 16px;
   text-decoration: none;
-  background: none !important; /* ← forcefully remove background */
+  background: none !important;
   border: none;
   margin: 4px 0;
 }
@@ -133,37 +135,40 @@ html, body {
   text-decoration: underline;
 }
 
+.custom-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  transition: all 0.3s ease;
+}
+
+.custom-content p {
+  font-size: 18px;
+  color: white;
+}
+
 .custom-content a {
+  font-size: 20px;
   color: #ffffff;
-  text-decoration: underline;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .custom-content a:hover {
   color: #d3d3d3;
 }
 
-.custom-content p {
-  font-size: 18px; /* Bigger paragraph text */
-  color: white;
-}
-
-.custom-content a {
-  font-size: 20px; /* Smaller hyperlinks */
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.custom-content p a:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-
 .link-row {
   display: flex;
   justify-content: center;
-  gap: 30px; /* spacing between links */
-  flex-wrap: wrap; /* optional: wrap links on small screens */
+  gap: 30px;
+  flex-wrap: wrap;
   margin-top: 10px;
 }
